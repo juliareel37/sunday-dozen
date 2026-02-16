@@ -1,0 +1,15 @@
+<!-- slot:hero -->
+# OUR STORY
+
+<!-- slot:sec1 -->
+## How It Started
+I’ve loved baking ever since I was a little kid. I adored the Food Network (especially Rachael Ray) and grew up trying to recreate fun bakes I saw on Pinterest or in cookbooks. Not only did I love baking, but I formed the hobby of trying every new confection I could find. When I had to start eating gluten-free a few years ago, I was truly devastated - I thought I’d lost yummy baked goods forever. However, with some recipe testing and lots of experimentation, I’ve discovered how to make gluten-free truly taste like the classics.
+
+<!-- slot:sec2 -->
+## A Little Love in Every Box
+I graduated from the University of Michigan in 2023 with a B.A. in Secondary Education. I fell in love with Ann Arbor and have lived in the area ever since! My mom used to always send a box of cookies to my college house during finals time. It was so comforting to know I was being thought of (and to have yummy cookies to help with my studying).
+If I had been gluten-free during my time as a student this would not have been possible. With risks of cross-contamination and the overall lack of gluten-free options, my mom would’ve had virtually zero options to send to me. I am happy to say that I can fill that gap - allowing parents to send a loving, delicious treat to their student while they are away!
+
+<!-- slot:sec3 -->
+## The GF Cookie You've Been Waiting For
+Gluten-free cookies are often small, crumbly, and lack flavor. Cookies from Sunday Dozen are the opposite. They have the classic cookie texture we all crave - a crisp edge with a soft, chewy center. Perfectly toasted brown butter gives the base dough a complex, rich flavor that melts in your mouth. Topped with flakey sea salt, they are the perfect treat.
