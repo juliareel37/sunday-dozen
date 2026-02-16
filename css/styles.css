@@ -20,6 +20,8 @@
   font-family: "Gulfs Display";
   src: url("../fonts/gulfs_display_normal/gulfs-display-normal.woff2")
       format("woff2"),
+      url("../fonts/gulfs_display_normal/gulfs-display-normal.eot")
+      format("eot"),
     url("../fonts/gulfs_display_normal/gulfs-display-normal.woff")
       format("woff");
   font-weight: 400;
