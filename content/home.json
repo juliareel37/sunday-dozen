@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "title": "Sunday Dozen - Home Baked GF Cookies"
+  },
+  "hero": {
+    "titleLines": [
+      "gluten free.",
+      "homemade.",
+      "seriously good."
+    ],
+    "eyebrow": "home-baked goods in Ann Arbor, MI",
+    "cta": {
+      "label": "place an order",
+      "href": "order.html"
+    },
+    "image": {
+      "src": "images/cookiestack3.png",
+      "alt": ""
+    }
+  },
+  "about": {
+    "heading": "ABOUT US",
+    "inlineLogo": {
+      "src": "images/logo_transparent.PNG",
+      "alt": ""
+    },
+    "image": {
+      "src": "images/soph3.jpg",
+      "alt": ""
+    },
+    "paragraphs": [
+      "Hello, I’m Sophie! Sunday Dozen began in my home kitchen after I realized how hard it was to find gluten-free treats that truly taste just as good as the originals. After extensive recipe testing and experimenting, I found myself with a gluten-free cookie that was too good not to share.",
+      "I bake in small batches using high-quality, gluten-free ingredients, and focus on rich flavors and bakery level quality. My kitchen is 100% free of gluten, making every cookie safe to consume for those with celiac disease. Each and every box is made with care, and I absolutely love being able to provide delicious, safe desserts for everyone to enjoy."
+    ],
+    "cta": {
+      "label": "Read more",
+      "href": "about.html"
+    }
+  },
+  "process": {
+    "heading": "HOW IT WORKS",
+    "steps": [
+      {
+        "title": "Fill out Order Form",
+        "body": "Fill out the online order form with your cookie choices and contact info. The form opens weekly on Sundays and closes once we reach capacity."
+      },
+      {
+        "title": "submit payment",
+        "body": "Confirm your order by sending your payment via Venmo. You will receive a text to confirm your payment and order."
+      },
+      {
+        "title": "pick up your order",
+        "body": "Enjoy your cookies on pickup day! Pickup information can be found in the order form or your confirmation text."
+      }
+    ],
+    "note": {
+      "text": "To request delivery or place a custom order, please send us a message.",
+      "link": {
+        "label": "send us a message",
+        "href": "contact.html"
+      }
+    },
+    "cta": {
+      "label": "Order now",
+      "href": "order.html"
+    }
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "Are your cookies celiac safe?",
+        "answer": "Yes! My cookies are safe for those with celiac disease. The kitchen I work in is 100% free of gluten, so cross contamination is not a risk."
+      },
+      {
+        "question": "Do you deliver?",
+        "answer": "Yes! I can deliver within Ann Arbor, MI for a $5 delivery fee. I most commonly deliver on the University of Michigan campus, but can deliver anywhere with an Ann Arbor address."
+      },
+      {
+        "question": "Do you take bulk orders?",
+        "answer": "Yes! I am more than happy to take orders for corporate events, bridal/baby showers, weddings, and more. If you are looking to place a bulk order, please send us a message. If you place a bulk order and live outside of Ann Arbor, MI, we can discuss the possibility of delivery or different pickup options.",
+        "link": {
+          "label": "send us a message",
+          "href": "contact.html"
+        }
+      },
+      {
+        "question": "Do you make cakes or cupcakes?",
+        "answer": "At this time, no I do not. I only make cookies at the moment but I am hoping to expand into more baked goods in the future!"
+      }
+    ],
+    "cta": {
+      "prompt": "Still have questions?",
+      "label": "Send us a message",
+      "href": "contact.html"
+    }
+  }
+}

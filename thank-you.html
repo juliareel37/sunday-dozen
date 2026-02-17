@@ -3,99 +3,30 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact - Home Bakery</title>
+    <title>Sunday Dozen</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
-    <header class="site-header">
-      <div class="container">
-        <a class="logo" href="index.html">
-          <img
-              src="images/Sunday Crumb Logos - 2.PNG"
-            alt="Sunday Dozen"
-            class="logo-image"
-          />
-        </a>
-        <nav class="site-nav" aria-label="Main">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <!-- <a href="menu.html">Menu</a> -->
-          <!-- <a href="gallery.html">Gallery</a> -->
-          <a href="contact.html">Contact</a>
-          <a class="button nav-cta" href="order.html">Order</a>
-        </nav>
-      </div>
-    </header>
+  <body data-contact-mode="thank-you">
+    <div data-include="partials/header.html"></div>
 
     <main>
-      <section class="page-header page-hero page-hero--menu">
+      <section class="page-header page-hero page-hero--menu reveal" data-delay="0.12s">
         <div class="container">
           <div class="page-hero-inner">
             <div class="menu">
-              <h1 >CONTACT</h1>
+              <h1 class="reveal" data-delay="0.2s" id="contact-hero-title"></h1>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="content" >
-        <div class="container">
-          <div class="grid two">
-            <div >
-              <h2 class="section-heading">Send us a message!</h2>
-              <p >Please reach out for any custom orders and delivery requests. We will respond within 24-48 hours. </p>
-            </div>
-
-            <!-- <form  action="#" method="post">
-              <label>Name<input type="text" name="name" placeholder="Your name" /></label>
-
-              <label> Email<input type="email" name="email" placeholder="you@example.com" /></label>
-
-              <label> message <textarea name="message" rows="5" placeholder=""></textarea></label>
-              
-              <button type="submit">Send request</button>
-            </form>
-
-           -->
-            <div class="form-receipt" >
-              <h3>Form submitted!</h3>
-              <p>We'll get back to you within 24-48 hours.</p>
-            </div>
-
-
-          </div>
-        </div>
-      </section>
+      <div id="contact-content"></div>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <img
-              src="images/Sunday Crumb Logos - 2.PNG"
-              alt="Sunday Dozen"
-              class="footer-icon"
-            />
-          </div>
-          <div class="footer-contact">
-            <h3>Contact</h3>
-            <p>Owner: Sophie Hampton</p>
-            <p>Email: sundaydozen@gmail.com</p>
-          </div>
-          <div class="footer-links">
-            <h3>Quick links</h3>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="order.html">Order</a>
-<!-- <a href="menu.html">Menu</a> -->
-            <!-- <a href="gallery.html">Gallery</a> -->
-            <a href="contact.html">Contact</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <div data-include="partials/footer.html"></div>
+    <script src="js/include.js"></script>
     <script src="js/reveal.js"></script>
+    <script src="js/contact-content.js"></script>
   </body>
 </html>

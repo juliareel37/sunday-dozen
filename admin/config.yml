@@ -1,22 +1,273 @@
 # when using the default proxy server port
 # local_backend: true
-# backend:
-#   name: git-gateway
 backend:
   name: git-gateway
   branch: dev
 
+publish_mode: editorial_workflow
 
 media_folder: "images"
 public_folder: "/images"
-
 collections:
-  - name: "site"
-    label: "Site Content"
+  - name: "pages"
+    label: "Pages"
     files:
-      - file: "content/site.json"
-        label: "Site Settings"
-        name: "settings"
+      - file: "content/home.json"
+        label: "Home Page"
+        name: "home"
         fields:
-          - { label: "Hero Title", name: "hero_title", widget: "string" }
-          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string" }
+          - label: "Meta"
+            name: "meta"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - label: "Title Lines"
+                name: "titleLines"
+                widget: "list"
+                field: { label: "Line", name: "line", widget: "string" }
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - label: "CTA"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Link", name: "href", widget: "string" }
+              - label: "Image"
+                name: "image"
+                widget: "object"
+                fields:
+                  - { label: "Image", name: "src", widget: "image" }
+                  - { label: "Alt text", name: "alt", widget: "string", required: false }
+
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Inline Logo"
+                name: "inlineLogo"
+                widget: "object"
+                fields:
+                  - { label: "Image", name: "src", widget: "image" }
+                  - { label: "Alt text", name: "alt", widget: "string", required: false }
+              - label: "Image"
+                name: "image"
+                widget: "object"
+                fields:
+                  - { label: "Image", name: "src", widget: "image" }
+                  - { label: "Alt text", name: "alt", widget: "string", required: false }
+              - label: "Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "p", widget: "text" }
+              - label: "CTA"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Link", name: "href", widget: "string" }
+
+          - label: "How It Works"
+            name: "process"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Steps"
+                name: "steps"
+                widget: "list"
+                fields:
+                  - { label: "Step Title", name: "title", widget: "string" }
+                  - { label: "Step Body", name: "body", widget: "text" }
+              - label: "Note"
+                name: "note"
+                widget: "object"
+                fields:
+                  - { label: "Text", name: "text", widget: "string" }
+                  - label: "Link"
+                    name: "link"
+                    widget: "object"
+                    fields:
+                      - { label: "Label", name: "label", widget: "string" }
+                      - { label: "Link", name: "href", widget: "string" }
+              - label: "CTA"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Link", name: "href", widget: "string" }
+
+          - label: "FAQ"
+            name: "faq"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Question", name: "question", widget: "string" }
+                  - { label: "Answer", name: "answer", widget: "text" }
+                  - label: "Link (optional)"
+                    name: "link"
+                    widget: "object"
+                    required: false
+                    fields:
+                      - { label: "Label", name: "label", widget: "string", required: false }
+                      - { label: "Link", name: "href", widget: "string", required: false }
+              - label: "CTA"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - { label: "Prompt", name: "prompt", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Link", name: "href", widget: "string" }
+
+      - file: "content/about.json"
+        label: "About Page"
+        name: "about"
+        fields:
+          - label: "Meta"
+            name: "meta"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+
+          - label: "Page Hero"
+            name: "pageHero"
+            widget: "object"
+            fields:
+              - { label: "Hero Title", name: "title", widget: "string" }
+              - { label: "Hero Subtitle (optional)", name: "subtitle", widget: "text", required: false }
+
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            summary: "{{fields.heading}} ({{fields.layout}})"
+            fields:
+              - label: "Layout"
+                name: "layout"
+                widget: "select"
+                options:
+                  - { label: "Landscape (text left, image right)", value: "landscape" }
+                  - { label: "Portrait (image left, text right)", value: "portrait" }
+                  - { label: "Portrait Stack (text + two stacked images)", value: "portraitStack" }
+
+              - { label: "Heading", name: "heading", widget: "string" }
+
+              - label: "Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "p", widget: "text" }
+
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                fields:
+                  - { label: "Image", name: "src", widget: "image" }
+                  - { label: "Alt text", name: "alt", widget: "string", required: false }
+
+      - file: "content/order.json"
+        label: "Order Page"
+        name: "order"
+        fields:
+          - label: "Meta"
+            name: "meta"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+
+          - label: "Page Hero"
+            name: "pageHero"
+            widget: "object"
+            fields:
+              - { label: "Hero Title", name: "title", widget: "string" }
+
+          - label: "Order Form"
+            name: "form"
+            widget: "object"
+            fields:
+              - label: "Provider"
+                name: "provider"
+                widget: "select"
+                options:
+                  - { label: "Tally", value: "tally" }
+                  - { label: "Google Form", value: "google" }
+              - label: "Tally"
+                name: "tally"
+                widget: "object"
+                fields:
+                  - { label: "Embed URL", name: "embedSrc", widget: "string" }
+                  - { label: "Frame Title", name: "title", widget: "string" }
+                  - { label: "Height", name: "height", widget: "number" }
+              - label: "Google Form"
+                name: "google"
+                widget: "object"
+                fields:
+                  - { label: "Embed URL", name: "embedSrc", widget: "string" }
+                  - { label: "Frame Title", name: "title", widget: "string" }
+                  - { label: "Width", name: "width", widget: "number" }
+                  - { label: "Height", name: "height", widget: "number" }
+
+      - file: "content/contact.json"
+        label: "Contact Page"
+        name: "contact"
+        fields:
+          - label: "Meta"
+            name: "meta"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+
+          - label: "Page Hero"
+            name: "pageHero"
+            widget: "object"
+            fields:
+              - { label: "Hero Title", name: "title", widget: "string" }
+
+          - label: "Contact Section"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Lede", name: "lede", widget: "text" }
+              - label: "Form"
+                name: "form"
+                widget: "object"
+                fields:
+                  - { label: "Action URL", name: "action", widget: "string" }
+                  - { label: "API Key", name: "apiKey", widget: "string" }
+                  - { label: "Redirect URL", name: "redirectTo", widget: "string" }
+                  - { label: "Button Label", name: "buttonLabel", widget: "string" }
+                  - label: "Fields"
+                    name: "fields"
+                    widget: "list"
+                    fields:
+                      - { label: "Type", name: "type", widget: "string" }
+                      - { label: "Name", name: "name", widget: "string" }
+                      - { label: "ID", name: "id", widget: "string", required: false }
+                      - { label: "Placeholder", name: "placeholder", widget: "string", required: false }
+                      - { label: "Required", name: "required", widget: "boolean", default: true }
+
+          - label: "Receipt"
+            name: "receipt"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Message", name: "message", widget: "text" }
+
+          - label: "Map"
+            name: "map"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Image"
+                name: "image"
+                widget: "object"
+                fields:
+                  - { label: "Image", name: "src", widget: "image" }
+                  - { label: "Alt text", name: "alt", widget: "string", required: false }

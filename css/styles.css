@@ -82,6 +82,12 @@ body {
   transform: translateY(0);
 }
 
+body[data-contact-mode="thank-you"] .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
