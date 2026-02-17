@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "title": "Sunday Dozen"
+  },
+  "pageHero": {
+    "title": "CONTACT"
+  },
+  "contact": {
+    "heading": "Send us a message",
+    "lede": "Please reach out for any custom orders and delivery requests. We will respond within 24-48 hours.",
+    "form": {
+      "action": "https://api.staticforms.dev/submit",
+      "apiKey": "sf_fam61mka1hnbh6n0dcfmgbn3",
+      "redirectTo": "thank-you.html",
+      "buttonLabel": "Submit",
+      "fields": [
+        {
+          "type": "text",
+          "name": "name",
+          "id": "name",
+          "placeholder": "First and Last Name",
+          "required": true
+        },
+        {
+          "type": "email",
+          "name": "email",
+          "id": "email",
+          "placeholder": "Email Address",
+          "required": true
+        },
+        {
+          "type": "phone",
+          "name": "phone",
+          "id": "phone",
+          "placeholder": "Phone Number",
+          "required": true
+        },
+        {
+          "type": "textarea",
+          "name": "message",
+          "id": "message",
+          "placeholder": "Message",
+          "required": true
+        }
+      ]
+    }
+  },
+  "receipt": {
+    "heading": "Form submitted!",
+    "message": "We'll get back to you within 24-48 hours."
+  },
+  "map": {
+    "title": "Delivery Area",
+    "image": {
+      "src": "images/delivery_map.png",
+      "alt": "Delivery area map"
+    }
+  }
+}

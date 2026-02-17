@@ -3,47 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sunday Dozen - Coming Soon</title>
-    <link rel="icon" type="image/png" href="images/favicon4.png" />
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Sunday Dozen</title>
+    <link rel="icon" type="image/png" href="images/favicon_bold.png" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header class="site-header reveal" data-delay="0.05s">
-      <div class="container">
-        <a class="logo" href="index.html">
-          <img
-            src="images/Sunday Crumb Logos - 2.PNG"
-            alt="Sunday Dozen"
-            class="logo-image"
-          />
-        </a>
-   
-      </div>
-    </header>
+    <div data-include="partials/header.html"></div>
+
+    <div id="home-hero"></div>
 
     <main>
-
-      <section class="band band-hero reveal coming-soon" data-delay="0.12s">
-        <div class="container hero-layout">
-          <div class="hero-text">
-            <h1 class="hero-title reveal" data-delay="0.2s">Coming Soon</h1>
-            <p class="lede reveal" data-delay="0.28s">
-              We’re putting the finishing touches on our new site and can’t wait
-              to share what we’ve been baking. Check back soon for updates!
-            </p>
-            <p>
-              In the meantime, follow us on Instagram @sundaydozenbakery, or get in touch with us
-              at sundaydozen@gmail.com.
-            </p>
-          </div>
-          <div class="hero-media reveal" data-delay="0.3s" aria-hidden="true">
-            <img src="images/sheet_box.jpg" alt="" class="hero-image" />
-          </div>
-        </div>
-      </section>
+      <div id="home-about"></div>
+      <div id="home-process"></div>
+      <div id="home-faq"></div>
     </main>
 
-    
+    <div data-include="partials/footer.html"></div>
+    <script src="js/include.js"></script>
     <script src="js/reveal.js"></script>
+    <script src="js/faq.js"></script>
+    <script src="js/home-content.js"></script>
   </body>
 </html>

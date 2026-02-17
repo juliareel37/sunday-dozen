@@ -3,151 +3,37 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sunday Dozen - About Us</title>
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <title>Sunday Dozen</title>
+    <link rel="icon" type="image/png" href="images/favicon_bold.png" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header class="site-header reveal" data-delay="0.05s">
-      <div class="container">
-        <a class="logo" href="index.html">
-          <img
-              src="images/Sunday Crumb Logos - 2.PNG"
-            alt="Sunday Dozen"
-            class="logo-image"
-          />
-        </a>
-        <nav class="site-nav" aria-label="Main">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <!-- <a href="menu.html">Menu</a> -->
-          <!-- <a href="gallery.html">Gallery</a> -->
-          <a href="contact.html">Contact</a>
-          <a class="button nav-cta" href="order.html">Order</a>
-        </nav>
-      </div>
-    </header>
+    <div data-include="partials/header.html"></div>
 
     <main>
       <section class="page-header page-hero page-hero--menu reveal" data-delay="0.12s">
         <div class="container">
           <div class="page-hero-inner">
             <div class="menu">
-              <h1 class="reveal" data-delay="0.2s">OUR STORY</h1>
-              <p class="lede reveal" data-delay="0.28s">
-                <!-- A small, at-home bakery focused on thoughtful, handmade treats. -->
-              </p>
-            </div>
+              <!-- <div  class="reveal" data-delay="0.2s" id="hero" > </div> -->
+              <h1 class="reveal" data-delay="0.2s" id="about-hero-title"></h1>
+              <p class="lede reveal" data-delay="0.28s" id="about-hero-subtitle"></p>
+            <!-- </div> -->
           </div>
         </div>
       </section>
-
-      <section class="content reveal" data-delay="0.2s">
+       
+   <section class="content reveal" data-delay="0.2s">
         <div class="container">
-          <section class="about-section about-section--stacked">
-            <div class="about-grid about-grid--landscape">
-              <div class="about-text reveal" data-delay="0.26s">
-                <h2>How It Started</h2>
-                <p>
-                  I’ve loved baking ever since I was a little kid. I adored the
-                  Food Network (especially Rachael Ray) and grew up trying to
-                  recreate fun bakes I saw on Pinterest or in cookbooks. Not
-                  only did I love baking, but I formed the hobby of trying every
-                  new confection I could find. When I had to start eating
-                  gluten-free a few years ago, I was truly devastated - I
-                  thought I’d lost yummy baked goods forever. However, with some
-                  recipe testing and lots of experimentation, I’ve discovered
-                  how to make gluten-free truly taste like the classics.
-                </p>
-              </div>
-              <figure class="about-image about-image--landscape reveal" data-delay="0.32s">
-                <img src="images/young_sophie.png" alt="Fresh cookie dough prepared by hand" />
-              </figure>
-            </div>
-          </section>
-
-          <section class="about-section">
-            <div class="about-grid about-grid--portrait">
-              <figure class="about-image about-image--portrait reveal" data-delay="0.3s">
-                <img src="images/cookies_salt.png" alt="Portrait of the Sunday Dozen baker" />
-              </figure>
-              <div class="about-text reveal" data-delay="0.26s">
-                <h2>A Little Love in Every Box</h2>
-                <p>
-                  I graduated from the University of Michigan in 2023 with a
-                  B.A. in Secondary Education. I fell in love with Ann Arbor and
-                  have lived in the area ever since! My mom used to always send
-                  a box of cookies to my college house during finals time. It
-                  was so comforting to know I was being thought of (and to have
-                  yummy cookies to help with my studying).
-                </p>
-                <p>
-                  If I had been gluten-free during my time as a student this
-                  would not have been possible. With risks of
-                  cross-contamination and the overall lack of gluten-free
-                  options, my mom would’ve had virtually zero options to send to
-                  me. I am happy to say that I can fill that gap - allowing
-                  parents to send a loving, delicious treat to their student
-                  while they are away!
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section class="about-section">
-            <div class="about-grid about-grid--portrait">
-              <div class="about-text reveal" data-delay="0.3s">
-                <h2>The GF Cookie You've Been Waiting For</h2>
-                <p>
-                  Gluten-free cookies are often small, crumbly, and lack flavor.
-                  Cookies from Sunday Dozen are the opposite. They have the
-                  classic cookie texture we all crave - a crisp edge with a
-                  soft, chewy center. Perfectly toasted brown butter gives the
-                  base dough a complex, rich flavor that melts in your mouth.
-                  Topped with flakey sea salt, they are the perfect treat.
-                </p>
-              </div>
-              <div class="about-portrait-stack">
-                <figure class="about-image about-image--portrait about-image--stack reveal" data-delay="0.36s">
-                  <img src="images/soph1.JPG" alt="Portrait of the Sunday Dozen baker" />
-                </figure>
-                <figure class="about-image about-image--portrait about-image--stack reveal" data-delay="0.36s">
-                  <img src="images/hand_reach_cookie.png" alt="Portrait of the Sunday Dozen baker" />
-                </figure>
-              </div>
-            </div>
-          </section>
+          <div id="about-sections"></div>
         </div>
       </section>
+      
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <img
-              src="images/Sunday Crumb Logos - 2.PNG"
-              alt="Sunday Dozen"
-              class="footer-icon"
-            />
-          </div>
-          <div class="footer-contact">
-            <h3>Contact</h3>
-            <p>Owner: Sophie Hampton</p>
-            <p>Email: sundaydozen@gmail.com</p>
-          </div>
-          <div class="footer-links">
-            <h3>Quick links</h3>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="order.html">Order</a>
-<!-- <a href="menu.html">Menu</a> -->
-            <!-- <a href="gallery.html">Gallery</a> -->
-            <a href="contact.html">Contact</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <div data-include="partials/footer.html"></div>
+    <script src="js/include.js"></script>
     <script src="js/reveal.js"></script>
+    <script src="js/about-content.js"></script>
   </body>
 </html>

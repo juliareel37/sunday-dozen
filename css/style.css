@@ -84,6 +84,12 @@ body {
   transform: translateY(0);
 }
 
+body[data-contact-mode="thank-you"] .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 .band-hero.coming-soon {
     background: white !important;
 }
@@ -918,19 +924,31 @@ button:focus-visible {
 }
 
 @media (max-width: 720px) {
+  .site-nav {
+    margin: 0px -10px;
+    gap: .2rem;
+  }
+  .baker-copy {
+    padding:1rem;
+  }
+  .page-hero-inner {
+    padding: 1%;
+  }
   .about-grid {
     gap: 1.5rem;
   }
-
-  .about-section--stacked {
-    /* margin-top: 6.5rem; */
+.about-section--stacked {
+    margin-top: 2rem;
   }
+  /* .about-section--stacked {
+    margin-top: 8rem;
+  } */
 
   .about-portrait-stack {
-    margin-top: 3rem;
+    margin-top: 8rem;
     min-height: 260px;
-    --stack-rise: 90px;
-    --stack-shift: 80px;
+    --stack-rise: 120px;
+    /* --stack-shift: 80px; */
   }
 
   .about-image--stack {
