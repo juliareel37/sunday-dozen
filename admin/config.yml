@@ -1,5 +1,5 @@
 # when using the default proxy server port
-local_backend: true
+# local_backend: true
 # backend:
 #   name: github
 #   repo: juliareel37/sunday-dozen
@@ -7,7 +7,7 @@ local_backend: true
 #   oauth_app_id: Iv23liQeIubvrsjxQbv2
 
 # auth_endpoint: https://decap-auth-nu.vercel.app/auth
-# publish_mode: editorial_workflow
+publish_mode: editorial_workflow
 
 # Use DecapBridge PKCE auth (required)
 backend:
