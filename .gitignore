@@ -1,0 +1,7 @@
+# fonts/
+# *.woff
+# *.woff2
+# *.ttf
+# *.otf
+# *.eot
+.DS_STORE
