@@ -1,0 +1,68 @@
+name: Deploy Pages (main + dev)
+
+on:
+  push:
+    branches: [main, dev]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Build a single site folder containing:
+      # / (from main) and /dev (from dev)
+      - name: Assemble site
+        run: |
+          rm -rf _site
+          mkdir -p _site
+
+          # Export main branch into site root
+          git checkout main
+          rsync -av --delete \
+            --exclude ".git" \
+            --exclude ".github" \
+            --exclude "_site" \
+            ./ _site/
+
+          # Export dev branch into /dev
+          git checkout dev
+          mkdir -p _site/dev
+          rsync -av --delete \
+            --exclude ".git" \
+            --exclude ".github" \
+            --exclude "_site" \
+            ./ _site/dev/
+
+          # If you use a .nojekyll file (recommended for non-Jekyll sites)
+          # touch _site/.nojekyll
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Deploy
+        uses: actions/deploy-pages@v4
