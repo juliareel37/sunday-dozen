@@ -1,9 +1,12 @@
 # when using the default proxy server port
 # local_backend: true
 backend:
-  name: git-gateway
+  name: github
+  repo: juliareel37/sunday-dozen
   branch: dev
+  oauth_app_id: Iv23liQeIubvrsjxQbv2
 
+auth_endpoint: https://decap-auth-nu.vercel.app/auth
 publish_mode: editorial_workflow
 
 media_folder: "images"
