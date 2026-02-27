@@ -683,6 +683,18 @@ button:focus-visible {
   margin-bottom: -10px;
 }
 
+#order-tally {
+  width: 100%;
+}
+
+#order-tally .order-embed-frame {
+  display: block;
+  width: 100% !important;
+  max-width: 100%;
+  height: var(--embed-height, 1200px);
+  border: 0;
+}
+
 .order-step a {
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -928,6 +940,11 @@ button:focus-visible {
     margin: 0px -10px;
     gap: .2rem;
   }
+
+  #order-tally .order-embed-frame {
+    height: max(var(--embed-height, 1200px), 85dvh);
+  }
+
   .baker-copy {
     padding:1rem;
   }

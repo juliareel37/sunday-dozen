@@ -1,5 +1,21 @@
 const ORDER_JSON_PATH = "content/order.json";
 
+const getEmbedHeight = (preferred, fallback) => {
+  const parsed = Number.parseInt(preferred, 10);
+  if (Number.isFinite(parsed) && parsed > 0) {
+    return parsed;
+  }
+  return fallback;
+};
+
+const applyResponsiveEmbedFrame = (frame, preferredHeight, fallbackHeight) => {
+  const height = getEmbedHeight(preferredHeight, fallbackHeight);
+  frame.classList.add("order-embed-frame");
+  frame.width = "100%";
+  frame.height = String(height);
+  frame.style.setProperty("--embed-height", `${height}px`);
+};
+
 const parseEmbedInput = (value) => {
   if (typeof value !== "string") return null;
 
@@ -69,8 +85,7 @@ const renderTally = (tally, container) => {
   const frame = document.createElement("iframe");
   frame.dataset.tallySrc = parsed.src;
   frame.loading = "lazy";
-  frame.width = "100%";
-  frame.height = String(tally.height || parsed.height || 1500);
+  applyResponsiveEmbedFrame(frame, tally.height || parsed.height, 1500);
   frame.setAttribute("frameborder", "0");
   frame.setAttribute("marginheight", "0");
   frame.setAttribute("marginwidth", "0");
@@ -86,8 +101,7 @@ const renderGoogleForm = (google, container) => {
   const frame = document.createElement("iframe");
   frame.src = parsed.src;
   frame.loading = "lazy";
-  frame.width = String(google.width || parsed.width || "100%");
-  frame.height = String(google.height || parsed.height || 1000);
+  applyResponsiveEmbedFrame(frame, google.height || parsed.height, 1200);
   frame.setAttribute("frameborder", "0");
   frame.setAttribute("marginheight", "0");
   frame.setAttribute("marginwidth", "0");
