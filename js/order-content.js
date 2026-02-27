@@ -17,25 +17,11 @@ const applyResponsiveEmbedFrame = (frame, preferredHeight, fallbackHeight) => {
 };
 
 const attachGoogleAutoHeight = (frame, container, preferredWidth, preferredHeight) => {
-  const baseWidth = getEmbedDimension(preferredWidth, 640);
-  const baseHeight = getEmbedDimension(preferredHeight, 1200);
-
-  const updateHeight = () => {
-    const containerWidth = container.clientWidth || baseWidth;
-    const widthScale = Math.max(1, baseWidth / containerWidth);
-    const nextHeight = Math.ceil(baseHeight * widthScale);
-    frame.height = String(nextHeight);
-    frame.style.setProperty("--embed-height", `${nextHeight}px`);
-  };
-
-  updateHeight();
-
-  if (typeof ResizeObserver !== "undefined") {
-    const observer = new ResizeObserver(updateHeight);
-    observer.observe(container);
-  } else {
-    window.addEventListener("resize", updateHeight, { passive: true });
-  }
+  void container;
+  void preferredWidth;
+  const fixedHeight = getEmbedDimension(preferredHeight, 1604);
+  frame.height = String(fixedHeight);
+  frame.style.setProperty("--embed-height", `${fixedHeight}px`);
 };
 
 const parseEmbedInput = (value) => {
@@ -119,23 +105,25 @@ const renderTally = (tally, container) => {
 const renderGoogleForm = (google, container) => {
   const parsed = parseEmbedInput(google.embedSrc);
   if (!parsed || !parsed.src) return;
+  const preferredWidth = parsed.width || google.width;
+  const preferredHeight = parsed.height || google.height;
 
   const frame = document.createElement("iframe");
   frame.src = parsed.src;
   frame.loading = "lazy";
-  applyResponsiveEmbedFrame(frame, google.height || parsed.height, 1200);
+  applyResponsiveEmbedFrame(frame, preferredHeight, 1604);
   frame.setAttribute("frameborder", "0");
   frame.setAttribute("marginheight", "0");
   frame.setAttribute("marginwidth", "0");
-  frame.setAttribute("scrolling", "no");
+  frame.setAttribute("scrolling", "auto");
   frame.title = google.title || parsed.title || "Form";
   frame.textContent = "Loading\u2026";
   container.appendChild(frame);
   attachGoogleAutoHeight(
     frame,
     container,
-    google.width || parsed.width,
-    google.height || parsed.height
+    preferredWidth,
+    preferredHeight
   );
 };
 
