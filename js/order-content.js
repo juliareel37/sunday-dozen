@@ -1,6 +1,6 @@
 const ORDER_JSON_PATH = "content/order.json";
 
-const getEmbedHeight = (preferred, fallback) => {
+const getEmbedDimension = (preferred, fallback) => {
   const parsed = Number.parseInt(preferred, 10);
   if (Number.isFinite(parsed) && parsed > 0) {
     return parsed;
@@ -9,11 +9,33 @@ const getEmbedHeight = (preferred, fallback) => {
 };
 
 const applyResponsiveEmbedFrame = (frame, preferredHeight, fallbackHeight) => {
-  const height = getEmbedHeight(preferredHeight, fallbackHeight);
+  const height = getEmbedDimension(preferredHeight, fallbackHeight);
   frame.classList.add("order-embed-frame");
   frame.width = "100%";
   frame.height = String(height);
   frame.style.setProperty("--embed-height", `${height}px`);
+};
+
+const attachGoogleAutoHeight = (frame, container, preferredWidth, preferredHeight) => {
+  const baseWidth = getEmbedDimension(preferredWidth, 640);
+  const baseHeight = getEmbedDimension(preferredHeight, 1200);
+
+  const updateHeight = () => {
+    const containerWidth = container.clientWidth || baseWidth;
+    const widthScale = Math.max(1, baseWidth / containerWidth);
+    const nextHeight = Math.ceil(baseHeight * widthScale);
+    frame.height = String(nextHeight);
+    frame.style.setProperty("--embed-height", `${nextHeight}px`);
+  };
+
+  updateHeight();
+
+  if (typeof ResizeObserver !== "undefined") {
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(container);
+  } else {
+    window.addEventListener("resize", updateHeight, { passive: true });
+  }
 };
 
 const parseEmbedInput = (value) => {
@@ -105,9 +127,16 @@ const renderGoogleForm = (google, container) => {
   frame.setAttribute("frameborder", "0");
   frame.setAttribute("marginheight", "0");
   frame.setAttribute("marginwidth", "0");
+  frame.setAttribute("scrolling", "no");
   frame.title = google.title || parsed.title || "Form";
   frame.textContent = "Loading\u2026";
   container.appendChild(frame);
+  attachGoogleAutoHeight(
+    frame,
+    container,
+    google.width || parsed.width,
+    google.height || parsed.height
+  );
 };
 
 const renderOrderPage = (data) => {

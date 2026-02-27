@@ -940,11 +940,6 @@ button:focus-visible {
     margin: 0px -10px;
     gap: .2rem;
   }
-
-  #order-tally .order-embed-frame {
-    height: max(var(--embed-height, 1200px), 85dvh);
-  }
-
   .baker-copy {
     padding:1rem;
   }
