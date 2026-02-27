@@ -1,5 +1,33 @@
 const ORDER_JSON_PATH = "content/order.json";
 
+const parseEmbedInput = (value) => {
+  if (typeof value !== "string") return null;
+
+  const trimmed = value.trim();
+  if (!trimmed) return null;
+
+  const iframeMatch = trimmed.match(/<iframe\b[^>]*>/i);
+  if (!iframeMatch) {
+    return { src: trimmed };
+  }
+
+  const tag = iframeMatch[0];
+  const getAttr = (name) => {
+    const match = tag.match(new RegExp(`${name}\\s*=\\s*["']([^"']+)["']`, "i"));
+    return match ? match[1] : null;
+  };
+
+  const width = getAttr("width");
+  const height = getAttr("height");
+
+  return {
+    src: getAttr("src"),
+    width: width && width.trim() ? width.trim() : null,
+    height: height && height.trim() ? height.trim() : null,
+    title: getAttr("title"),
+  };
+};
+
 const ensureTallyEmbedScript = () => {
   const doc = document;
   const src = "https://tally.so/widgets/embed.js";
@@ -35,29 +63,35 @@ const ensureTallyEmbedScript = () => {
 };
 
 const renderTally = (tally, container) => {
+  const parsed = parseEmbedInput(tally.embedSrc);
+  if (!parsed || !parsed.src) return;
+
   const frame = document.createElement("iframe");
-  frame.dataset.tallySrc = tally.embedSrc;
+  frame.dataset.tallySrc = parsed.src;
   frame.loading = "lazy";
   frame.width = "100%";
-  frame.height = String(tally.height || 1500);
+  frame.height = String(tally.height || parsed.height || 1500);
   frame.setAttribute("frameborder", "0");
   frame.setAttribute("marginheight", "0");
   frame.setAttribute("marginwidth", "0");
-  frame.title = tally.title || "";
+  frame.title = tally.title || parsed.title || "";
   container.appendChild(frame);
   ensureTallyEmbedScript();
 };
 
 const renderGoogleForm = (google, container) => {
+  const parsed = parseEmbedInput(google.embedSrc);
+  if (!parsed || !parsed.src) return;
+
   const frame = document.createElement("iframe");
-  frame.src = google.embedSrc;
+  frame.src = parsed.src;
   frame.loading = "lazy";
-  frame.width = String(google.width || "100%");
-  frame.height = String(google.height || 1000);
+  frame.width = String(google.width || parsed.width || "100%");
+  frame.height = String(google.height || parsed.height || 1000);
   frame.setAttribute("frameborder", "0");
   frame.setAttribute("marginheight", "0");
   frame.setAttribute("marginwidth", "0");
-  frame.title = google.title || "Form";
+  frame.title = google.title || parsed.title || "Form";
   frame.textContent = "Loading\u2026";
   container.appendChild(frame);
 };

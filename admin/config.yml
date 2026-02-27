@@ -236,14 +236,14 @@ collections:
                 name: "tally"
                 widget: "object"
                 fields:
-                  - { label: "Embed URL", name: "embedSrc", widget: "string" }
+                  - { label: "Embed URL or Full iframe Embed Code", name: "embedSrc", widget: "string" }
                   - { label: "Frame Title", name: "title", widget: "string" }
                   - { label: "Height", name: "height", widget: "number" }
               - label: "Google Form"
                 name: "google"
                 widget: "object"
                 fields:
-                  - { label: "Embed URL", name: "embedSrc", widget: "string" }
+                  - { label: "Embed URL or Full iframe Embed Code", name: "embedSrc", widget: "string" }
                   - { label: "Frame Title", name: "title", widget: "string" }
                   - { label: "Width", name: "width", widget: "number" }
                   - { label: "Height", name: "height", widget: "number" }
