@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "Finals Week Orders - Home Bakery"
+  },
+  "pageHero": {
+    "title": "FINALS ORDERS"
+  },
+  "form": {
+    "provider": "google",
+    "tally": {
+      "embedSrc": "https://tally.so/embed/b5x0pE?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1",
+      "title": "Cookie Order Form"
+    },
+    "google": {
+      "embedSrc": "<iframe src=\"https://docs.google.com/forms/d/e/1FAIpQLScXr4Aq3_LeiHz1lOcJAV4dhxstgIFVzrgADxDhe5Kj6eXPpg/viewform?embedded=true\" width=\"640\" height=\"2185\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\">Loading…</iframe>",
+      "title": "Order Form V1"
+    }
+  }
+}
+
+

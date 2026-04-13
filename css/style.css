@@ -1145,3 +1145,45 @@ button {
     align-items: flex-start;
   }
 }
+
+.order-options {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.order-option {
+  background: var(--color-surface);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.order-option h2 {
+  font-family: var(--font-accent);
+  margin-top: 0;
+  color: var(--color-espresso);
+}
+
+.order-option p {
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-terracotta);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--color-dusty-rose);
+  color: white;
+}

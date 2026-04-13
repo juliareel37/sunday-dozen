@@ -245,6 +245,84 @@ collections:
                   - { label: "Embed URL or Full iframe Embed Code", name: "embedSrc", widget: "string" }
                   - { label: "Frame Title", name: "title", widget: "string" }
 
+      - file: "content/orders-finals.json"
+        label: "Orders Finals Page"
+        name: "orders-finals"
+        fields:
+          - label: "Meta"
+            name: "meta"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+
+          - label: "Page Hero"
+            name: "pageHero"
+            widget: "object"
+            fields:
+              - { label: "Hero Title", name: "title", widget: "string" }
+
+          - label: "Order Form"
+            name: "form"
+            widget: "object"
+            fields:
+              - label: "Provider"
+                name: "provider"
+                widget: "select"
+                options:
+                  - { label: "Tally", value: "tally" }
+                  - { label: "Google Form", value: "google" }
+              - label: "Tally"
+                name: "tally"
+                widget: "object"
+                fields:
+                  - { label: "Embed URL or Full iframe Embed Code", name: "embedSrc", widget: "string" }
+                  - { label: "Frame Title", name: "title", widget: "string" }
+              - label: "Google Form"
+                name: "google"
+                widget: "object"
+                fields:
+                  - { label: "Embed URL or Full iframe Embed Code", name: "embedSrc", widget: "string" }
+                  - { label: "Frame Title", name: "title", widget: "string" }
+
+      - file: "content/orders-graduation.json"
+        label: "Orders Graduation Page"
+        name: "orders-graduation"
+        fields:
+          - label: "Meta"
+            name: "meta"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+
+          - label: "Page Hero"
+            name: "pageHero"
+            widget: "object"
+            fields:
+              - { label: "Hero Title", name: "title", widget: "string" }
+
+          - label: "Order Form"
+            name: "form"
+            widget: "object"
+            fields:
+              - label: "Provider"
+                name: "provider"
+                widget: "select"
+                options:
+                  - { label: "Tally", value: "tally" }
+                  - { label: "Google Form", value: "google" }
+              - label: "Tally"
+                name: "tally"
+                widget: "object"
+                fields:
+                  - { label: "Embed URL or Full iframe Embed Code", name: "embedSrc", widget: "string" }
+                  - { label: "Frame Title", name: "title", widget: "string" }
+              - label: "Google Form"
+                name: "google"
+                widget: "object"
+                fields:
+                  - { label: "Embed URL or Full iframe Embed Code", name: "embedSrc", widget: "string" }
+                  - { label: "Frame Title", name: "title", widget: "string" }
+
       - file: "content/contact.json"
         label: "Contact Page"
         name: "contact"
