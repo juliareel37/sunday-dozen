@@ -10,7 +10,7 @@
     "lede": "Please reach out for any custom orders and delivery requests. We will respond within 24-48 hours.",
     "form": {
       "action": "https://api.staticforms.dev/submit",
-      "apiKey": "sf_fam61mka1hnbh6n0dcfmgbn3",
+      "apiKey": "sf_ed7a8ae62b6164c64f0dd412",
       "redirectTo": "thank-you.html",
       "buttonLabel": "Submit",
       "fields": [
